@@ -1,5 +1,6 @@
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
+const { authJWT } = require('./middleware/authJwt.js');
 
 const app = express();
 const port = 3000;
@@ -17,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 // Root route
-app.get('/', (req, res) => {
+app.get('/', authJWT, (req, res) => {
     res.send('Sereni Backend!');
 });
 
