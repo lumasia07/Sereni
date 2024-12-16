@@ -60,7 +60,7 @@ const userLogin = async (req, res) => {
     }
 };
 
-//Get user by ID
+// Fetch User profile using ID
 
 const findUserByID = async (req, res) => {
     try {

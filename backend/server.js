@@ -1,5 +1,6 @@
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
+const cardRoutes = require('./routes/cardRoutes.js')
 const { authJWT } = require('./middleware/authJwt.js');
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(express.json());
 
 // User routes blueprint
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/cards', cardRoutes);
 
 // Logger middleware
 app.use((req, res, next) => {
