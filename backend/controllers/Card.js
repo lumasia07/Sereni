@@ -4,7 +4,8 @@ const prisma = new PrismaClient();
 // Post Sereni Card
 const postCard = async (req, res) => {
   try {
-    const { cardText, authorId } = req.body;
+    const { cardText } = req.body;
+    const authorId = req.user.userID;
 
     // Input Validation
     if (!cardText || !authorId) {
