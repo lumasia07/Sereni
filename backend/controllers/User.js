@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 // Register User
 const registerUser = async (req, res) => {
     try {
-        const { name, email, password} = req.body;
+        const { firstName, lastName, email, password} = req.body;
 
         const existingUser = await prisma.user.findUnique({
             where: { email },
@@ -21,7 +21,8 @@ const registerUser = async (req, res) => {
 
         const newUser = await prisma.user.create({
             data: {
-                name,
+                firstName,
+                lastName,
                 email,
                 password: hashedPassword,
             },
@@ -68,7 +69,8 @@ const findUserByID = async (req, res) => {
         where: { userID: req.user.userID },
         select: { 
           userID: true,
-          name: true,
+          firstName: true,
+          lastName: true,
           email: true
         }
       });

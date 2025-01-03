@@ -12,7 +12,8 @@ datasource db {
 // User Model
 model User {
     userID String @id @default(uuid()) @db.Char(36)
-    name String?
+    firstName String?
+    lastName String?
     email String @unique
     password String
     cards Card[]

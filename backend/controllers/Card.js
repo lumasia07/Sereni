@@ -20,7 +20,7 @@ const postCard = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: "Author not found!" });
     }
-
+ 
     // Create the card
     const newCard = await prisma.card.create({
       data: {

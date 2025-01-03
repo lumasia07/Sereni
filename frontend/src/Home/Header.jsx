@@ -1,6 +1,6 @@
 // Header
 
-const SereniLogo = () => (
+export const SereniLogo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" className="w-40">
     <path d="M20 40 Q50 20 80 40 T140 40" 
           fill="none" 
@@ -31,7 +31,7 @@ const SereniLogo = () => (
 
 const Header = () => {
   return (
-    <header className="relative overflow-hidden bg-gradient-to-r from-green-50 to-blue-50">
+    <header className="relative overflow-hidden bg-gradient-to-r from-green-50 to-blue-50 font-sen">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full blur-3xl"></div>
